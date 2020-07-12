@@ -12,7 +12,7 @@
 CONTAINER="jenkins_demo"
 # 镜像名称（以日期时间为镜像标签，防止重复）
 IMAGE=$CONTAINER":"$(date -d "today" +"%Y%m%d_%H%M%S")
-
+docker images
 # 删除滚动更新残留的容器
 docker rm `docker ps -a | grep -w $CONTAINER"_"$CONTAINER | awk '{print $1}'`
 # 强制删除滚动更新残留的镜像
