@@ -21,7 +21,7 @@ docker images
 
 # 创建新镜像
 #docker build -t $IMAGE . && \
-docker build -t sonic_test
+docker build .
 pwd
 ls
 docker images
