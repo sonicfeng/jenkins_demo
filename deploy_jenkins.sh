@@ -11,12 +11,13 @@
 # 容器名称
 CONTAINER="jenkins_demo"
 # 镜像名称（以日期时间为镜像标签，防止重复）
-IMAGE=$CONTAINER":"$(date -d "today" +"%Y%m%d_%H%M%S")
+#IMAGE=$CONTAINER":"$(date -d "today" +"%Y%m%d_%H%M%S")
+IMAGE="sonictestingjenkins"
 docker images
 # 删除滚动更新残留的容器
-docker rm `docker ps -a | grep -w $CONTAINER"_"$CONTAINER | awk '{print $1}'`
+#docker rm `docker ps -a | grep -w $CONTAINER"_"$CONTAINER | awk '{print $1}'`
 # 强制删除滚动更新残留的镜像
-docker rmi --force `docker images | grep -w $CONTAINER | awk '{print $3}'`
+#docker rmi --force `docker images | grep -w $CONTAINER | awk '{print $3}'`
 
 # 创建新镜像
 docker build -t $IMAGE . && \
@@ -31,4 +32,4 @@ cp docker-compose.src.yml docker-compose.jenkins.yml && \
 sed -i s%IMAGE_LATEST%$IMAGE%g docker-compose.jenkins.yml && \
 
 # 使用 docker stack 启动服务
-docker stack deploy -c docker-compose.jenkins.yml $CONTAINER
+#docker stack deploy -c docker-compose.jenkins.yml $CONTAINER
