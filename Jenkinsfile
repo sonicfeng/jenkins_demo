@@ -4,7 +4,7 @@ pipeline {
     stage('Deploy') {
       agent any
       steps {
-        echo 'Deploying'
+        echo 'Deploying testing'
         sh './deploy_jenkins.sh'
       }
     }
