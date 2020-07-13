@@ -28,18 +28,18 @@ docker images
 
 
 ssh -tt root@120.25.26.237
-pwd
-docker images
+
+#docker images
 ls
 
 # 删除 docker-compose.jenkins.yml 文件，防止使用相同镜像
-rm -rf docker-compose.jenkins.yml && \
+#rm -rf docker-compose.jenkins.yml && \
 
 # 复制 docker-compose.src.yml 文件，防止污染原文件
-cp docker-compose.src.yml docker-compose.jenkins.yml && \
+#cp docker-compose.src.yml docker-compose.jenkins.yml && \
 
 # 替换镜像名标志位为最新镜像
-sed -i s%IMAGE_LATEST%$IMAGE%g docker-compose.jenkins.yml && \
+#sed -i s%IMAGE_LATEST%$IMAGE%g docker-compose.jenkins.yml && \
 
 # 使用 docker stack 启动服务
 #docker stack deploy -c docker-compose.jenkins.yml $CONTAINER
