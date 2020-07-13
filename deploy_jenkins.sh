@@ -27,10 +27,10 @@ ls
 docker images
 
 
-ssh -tt root@120.25.26.237
+#ssh -tt root@120.25.26.237
 
 #docker images
-ls
+#ls
 
 # 删除 docker-compose.jenkins.yml 文件，防止使用相同镜像
 #rm -rf docker-compose.jenkins.yml && \
