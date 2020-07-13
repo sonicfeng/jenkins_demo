@@ -21,12 +21,13 @@ docker images
 
 # 创建新镜像
 #docker build -t $IMAGE . && \
-docker build -t $IMAGE .
+#docker build -t $IMAGE .
 pwd
 ls
 docker images
 
-ssh root@120.25.26.237
+
+ssh -tt root@120.25.26.237
 pwd
 docker images
 ls
