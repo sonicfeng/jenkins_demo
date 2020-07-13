@@ -9,10 +9,10 @@
 #     Last modified on 2018/08/16
 
 # 容器名称
-CONTAINER="jenkins_demo"
+CONTAINER="jenkins_sonic"
 # 镜像名称（以日期时间为镜像标签，防止重复）
 #IMAGE=$CONTAINER":"$(date -d "today" +"%Y%m%d_%H%M%S")
-#IMAGE="sonictestingjenkins"
+IMAGE="sonic_new"
 docker images
 # 删除滚动更新残留的容器
 #docker rm `docker ps -a | grep -w $CONTAINER"_"$CONTAINER | awk '{print $1}'`
@@ -21,10 +21,15 @@ docker images
 
 # 创建新镜像
 #docker build -t $IMAGE . && \
-docker build .
+docker build -t $IMAGE.
 pwd
 ls
 docker images
+
+ssh root@120.25.26.237
+pwd
+docker images
+ls
 
 # 删除 docker-compose.jenkins.yml 文件，防止使用相同镜像
 rm -rf docker-compose.jenkins.yml && \
