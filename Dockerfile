@@ -1,4 +1,4 @@
-FROM nginx:1.15.2
+FROM nginx
 ENV REFRESHED_AT 2018-08-09
 
 COPY ./index.html /usr/share/nginx/html/index.html
